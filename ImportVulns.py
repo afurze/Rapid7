@@ -1,3 +1,14 @@
+# -------------------------------------------------------------------------
+# This script was written to fix issues with the Nexpose Data
+# Warehouse and the vulnerability_instance fields which,
+# as of the date of this commit, are not properly tallied.
+# This script runs a report (must already be configured), downloads,
+# writes to the Data Warehouse fact_asset_vulnerability_instance
+# table and then performs queries to update the fact_all,
+# fact_vulnerability and fact_asset tables vulnerability_instance
+# columns
+# -------------------------------------------------------------------------
+
 import base64
 import collections
 import csv
